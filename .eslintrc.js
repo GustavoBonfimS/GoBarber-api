@@ -3,10 +3,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: [
-    'airbnb-base',
-    'prettier'
-  ],
+  extends: ['airbnb-base', 'prettier'],
   plugins: ['prettier'],
   parserOptions: {
     ecmaVersion: 12,
@@ -18,6 +15,6 @@ module.exports = {
     'class-methods-use-this': 'off',
     'no-param-reassign': 'off',
     'camelCase': 'off',
-    'no-unused-vars': ['error', { argsIgnorePattern: 'next'}],
+    'no-unused-vars': 'warn',
   },
 };
