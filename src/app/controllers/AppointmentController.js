@@ -113,7 +113,7 @@ class AppointmentController {
           atributes: ['name'],
         },
       ],
-    });
+    }); 
 
     if (appointment.user_id !== req.userId) {
       return res
