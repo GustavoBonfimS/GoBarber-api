@@ -4,7 +4,7 @@ import Appointment from '../models/Appointment';
 import User from '../models/User';
 
 class ScheduleController {
-  async idnex(req, res) {
+  async index(req, res) {
     const checkUserProvider = await User.findOne({
       where: { id: req.userId, provider: true },
     });
@@ -21,6 +21,13 @@ class ScheduleController {
         canceled_at: null,
         date: { [Op.between]: [startOfDay(parsedDate), endOfDay(parsedDate)] },
       },
+      include: [
+        {
+          model: User,
+          as: 'user',
+          attributes: ['name'],
+        },
+      ],
       order: ['date'],
     });
     return res.json(appointments);

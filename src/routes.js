@@ -25,7 +25,7 @@ routes.put('/users', UserController.update);
 routes.get('/providers', ProviderController.index);
 routes.get('/providers/:providerid/available', AvailableController.index);
 
-routes.get('/schedules', ScheduleController.idnex);
+routes.get('/schedules', ScheduleController.index);
 
 routes.post('/appointments', AppointmentController.store);
 routes.get('/appointments', AppointmentController.index);
